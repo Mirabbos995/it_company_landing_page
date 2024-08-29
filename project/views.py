@@ -1,11 +1,16 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema_view, extend_schema
+from openid.extensions.draft.pape5 import Response
 from rest_framework import mixins
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 from .serializers import *
+from django_api_proxy.views import ProxyView
 
+from .serializers import ProjectSerializers
 
 
 class ProjectPagination(PageNumberPagination):   # always used in List!

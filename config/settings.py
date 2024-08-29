@@ -36,8 +36,10 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'modeltranslation',
     'djoser',
+    'django_api_proxy',
 ]
 INSTALLED_APPS += ['storages']
+INSTALLED_APPS += ['proxyimage']
 
 MINIO_STORAGE_ENDPOINT = env.str("MINIO_STORAGE_ENDPOINT", "")
 MINIO_STORAGE_ACCESS_KEY = env.str("MINIO_STORAGE_ACCESS_KEY", "")
@@ -168,7 +170,7 @@ CSRF_COOKIE_SECURE = False
 #SWAGGER SETTINGS
 #################################
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'iTech Website',
+    'TITLE': 'Iqro Website',
         'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
 

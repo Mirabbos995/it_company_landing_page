@@ -6,6 +6,7 @@ from contact.urls import urlpatterns as contact_urls
 from homepage.urls import url_patterns as home_page
 from about.urls import urlpatterns as about_us
 from project.views import UploadImage
+from proxyimage.urls import urlpatterns as proxy_urls
 
 router = routers.SimpleRouter()
 router.register(r'upload-image', UploadImage, basename='uploadimage')
@@ -22,3 +23,4 @@ urlpatterns += showcase
 urlpatterns += contact_urls
 urlpatterns += home_page
 urlpatterns += about_us
+urlpatterns += proxy_urls

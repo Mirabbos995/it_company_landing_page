@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshSlidingView
+from proxyimage.views import ImageProxyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,6 +11,10 @@ urlpatterns = [
     # JWT
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshSlidingView.as_view(), name='token_refresh'),
+
+
+    ### Proxy Img
+    path('proxy-image/', ImageProxyView.as_view(), name='proxy-image'),
 
 ]
 
